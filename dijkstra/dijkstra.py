@@ -41,4 +41,5 @@ class Dijkstra(object):
         return G.get_edge_weight(u, v)
 
     def get_distance(self, u):
+        """ Return the length of shortest path from s to u. """
         return self.__dist.get(u, math.inf)
