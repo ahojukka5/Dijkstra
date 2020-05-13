@@ -43,3 +43,11 @@ class Dijkstra(object):
     def get_distance(self, u):
         """ Return the length of shortest path from s to u. """
         return self.__dist.get(u, math.inf)
+
+    def get_path(self, v):
+        """ Return the shortest path to v. """
+        path = [v]
+        while self.__prev[v] != v:
+            v = self.__prev[v]
+            path.append(v)
+        return path[::-1]

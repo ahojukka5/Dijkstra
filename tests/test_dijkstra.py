@@ -32,3 +32,4 @@ def test_dijkstra():
         print("%3s %3s" % (v, dijkstra.get_distance(v)))
 
     assert dijkstra.get_distance(T) == 10
+    assert dijkstra.get_path(T) == ["S", "D", "T"]
