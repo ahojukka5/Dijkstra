@@ -24,3 +24,6 @@ class Graph(object):
         """ Get nodes adjacent to u. """
         return self.__adjacency_list.get(u, set())
 
+    def get_number_of_nodes(self):
+        """ Return the total number of nodes in graph. """
+        return len(self.__adjacency_list)
