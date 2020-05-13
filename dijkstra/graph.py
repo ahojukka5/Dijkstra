@@ -19,4 +19,4 @@ class Graph(object):
 
     def get_adjacent_nodes(self, u):
         """ Get nodes adjacent to u. """
-        return self.__adjacency_list[u]
+        return self.__adjacency_list.get(u, list())
