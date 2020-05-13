@@ -9,6 +9,7 @@ class Dijkstra(object):
     """ Dijkstra's shortest path algorithm. """
 
     def __init__(self, G, s):
+        """ Calculate shortest path from s to other nodes in G. """
         self.__dist = dist = dict()
         self.__prev = prev = dict()
         self.__visited = visited = set()
