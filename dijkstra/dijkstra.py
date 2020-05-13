@@ -4,9 +4,9 @@
 import math
 
 
-class Dijkstra(object):
+class AbstractDijkstra(object):
 
-    """ Dijkstra's shortest path algorithm. """
+    """ Dijkstra's shortest path algorithm, abstract class. """
 
     def __init__(self, G, s):
         """ Calculate shortest path from s to other nodes in G. """
@@ -34,11 +34,11 @@ class Dijkstra(object):
 
     @staticmethod
     def get_adjacent_nodes(G, u):
-        return G.get_adjacent_nodes(u)
+        raise NotImplementedError()
 
     @staticmethod
     def get_edge_weight(G, u, v):
-        return G.get_edge_weight(u, v)
+        raise NotImplementedError()
 
     def get_distance(self, u):
         """ Return the length of shortest path from s to u. """
@@ -51,3 +51,14 @@ class Dijkstra(object):
             v = self.__prev[v]
             path.append(v)
         return path[::-1]
+
+
+class Dijkstra(AbstractDijkstra):
+
+    @staticmethod
+    def get_adjacent_nodes(G, u):
+        return G.get_adjacent_nodes(u)
+
+    @staticmethod
+    def get_edge_weight(G, u, v):
+        return G.get_edge_weight(u, v)

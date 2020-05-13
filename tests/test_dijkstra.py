@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import pytest
+
 from dijkstra import Graph, Dijkstra
+from dijkstra.dijkstra import AbstractDijkstra
 
 
 def test_dijkstra():
@@ -25,6 +28,12 @@ def test_dijkstra():
     graph.add_edge(G, E, 2)
     graph.add_edge(G, T, 3)
     graph.add_edge(T, F, 5)
+
+    with pytest.raises(NotImplementedError):
+        AbstractDijkstra.get_adjacent_nodes(graph, S)
+
+    with pytest.raises(NotImplementedError):
+        AbstractDijkstra.get_edge_weight(graph, S, A)
 
     dijkstra = Dijkstra(graph, S)
 
