@@ -1,6 +1,6 @@
 class Graph(object):
 
-    """ Directed, acyclis graph with edge weights. """
+    """ Directed, acyclic graph with edge weights. """
 
     def __init__(self):
         self.__adjacency_list = dict()
