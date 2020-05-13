@@ -27,3 +27,7 @@ class Graph(object):
     def get_number_of_nodes(self):
         """ Return the total number of nodes in graph. """
         return len(self.__adjacency_list)
+
+    def get_nodes(self):
+        """ Return all nodes in this graph. """
+        return self.__adjacency_list.keys()
