@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 class Graph(object):
 
     """ Directed, acyclic graph with edge weights. """
