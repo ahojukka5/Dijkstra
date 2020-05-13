@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from io import StringIO
+
+
 class Graph(object):
 
     """ Directed, acyclic graph with edge weights. """
@@ -31,3 +34,12 @@ class Graph(object):
     def get_nodes(self):
         """ Return all nodes in this graph. """
         return self.__adjacency_list.keys()
+
+    def __str__(self):
+        io = StringIO()
+        N = self.get_number_of_nodes()
+        print("Directed, acyclic graph with %d nodes" % N, file=io)
+        for u in self.get_nodes():
+            adj = self.get_adjacent_nodes(u)
+            print("Node %d: connected to %d nodes" % (u, len(adj)), file=io)
+        return io.getvalue()
