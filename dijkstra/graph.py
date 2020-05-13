@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import random
 from io import StringIO
 
 
@@ -43,3 +44,17 @@ class Graph(object):
             adj = self.get_adjacent_nodes(u)
             print("Node %d: connected to %d nodes" % (u, len(adj)), file=io)
         return io.getvalue()
+
+
+def generate_random_graph(nvertices, edge_density, min_weight, max_weight):
+    """ Generate random graph with `nvertices`. """
+    G = Graph()
+    for u in range(nvertices):
+        nadj = int(nvertices * edge_density)
+        while len(G.get_adjacent_nodes(u)) < nadj:
+            v = random.randrange(nvertices)
+            if u == v:
+                continue
+            w = random.randint(min_weight, max_weight)
+            G.add_edge(u, v, w)
+    return G
