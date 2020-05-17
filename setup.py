@@ -37,7 +37,10 @@ extras = {
 }
 
 description = """
-dijkstra is a native Python implementation of Dijkstra's shortest path algorithm.
+dijkstra is a native Python implementation of famous Dijkstra's shortest path
+algorithm. The implemented algorithm can be used to analyze reasonably large
+networks. The primary goal in design is the clarity of the program code. Thus,
+program code tends to be more educational than effective.
 """
 
 setuptools.setup(
