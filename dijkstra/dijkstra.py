@@ -12,12 +12,12 @@ class AbstractDijkstraSPF(object):
         """ Calculate shortest path from s to other nodes in G. """
         self.__dist = dist = dict()
         self.__prev = prev = dict()
-        self.__visited = visited = set()
-        self.__queue = queue = set()
+        visited = set()
+        queue = set()
 
-        self.__dist[s] = 0
-        self.__prev[s] = s
-        self.__queue.add(s)
+        dist[s] = 0
+        prev[s] = s
+        queue.add(s)
 
         while queue:
             u = min(queue, key=dist.get)
