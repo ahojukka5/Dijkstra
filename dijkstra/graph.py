@@ -9,9 +9,9 @@ class Graph(object):
 
     """ Directed, acyclic graph with edge weights. """
 
-    def __init__(self):
-        self.__adjacency_list = dict()
-        self.__edge_weights = dict()
+    def __init__(self, adjacency_list=dict(), edge_weights=dict()):
+        self.__adjacency_list = adjacency_list.copy()
+        self.__edge_weights = edge_weights.copy()
 
     def add_edge(self, u, v, w):
         """ Add a new edge u -> v to graph with edge weight w. """
