@@ -13,7 +13,6 @@ def test_dijkstra():
 
     graph = Graph()
     graph.add_edge(S, A, 4)
-    graph.add_edge(S, A, 4)
     graph.add_edge(S, B, 3)
     graph.add_edge(S, D, 7)
     graph.add_edge(A, C, 1)
