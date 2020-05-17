@@ -42,7 +42,7 @@ class Graph(object):
         print("Directed, acyclic graph with %d nodes" % N, file=io)
         for u in self.get_nodes():
             adj = self.get_adjacent_nodes(u)
-            print("Node %d: connected to %d nodes" % (u, len(adj)), file=io)
+            print("Node %s: connected to %d nodes" % (u, len(adj)), file=io)
         return io.getvalue()
 
 
