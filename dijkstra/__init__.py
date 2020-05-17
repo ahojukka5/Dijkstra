@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from .graph import Graph, generate_random_graph
-from .dijkstra import Dijkstra
+from .dijkstra import DijkstraSPF
 
 __version__ = "0.1.0"
 __author__ = "Jukka Aho <ahojukka5@gmail.com>"
-__all__ = [Graph, Dijkstra, generate_random_graph]
+__all__ = [Graph, DijkstraSPF, generate_random_graph]

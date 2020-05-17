@@ -3,8 +3,8 @@
 
 import pytest
 
-from dijkstra import Graph, Dijkstra
-from dijkstra.dijkstra import AbstractDijkstra
+from dijkstra import Graph, DijkstraSPF
+from dijkstra.dijkstra import AbstractDijkstraSPF
 
 
 def test_dijkstra():
@@ -29,16 +29,20 @@ def test_dijkstra():
     graph.add_edge(G, T, 3)
     graph.add_edge(T, F, 5)
 
-    with pytest.raises(NotImplementedError):
-        AbstractDijkstra.get_adjacent_nodes(graph, S)
-
-    with pytest.raises(NotImplementedError):
-        AbstractDijkstra.get_edge_weight(graph, S, A)
-
-    dijkstra = Dijkstra(graph, S)
+    dijkstra = DijkstraSPF(graph, S)
 
     for v in nodes:
         print("%3s %3s" % (v, dijkstra.get_distance(v)))
 
     assert dijkstra.get_distance(T) == 10
     assert dijkstra.get_path(T) == ["S", "D", "T"]
+
+
+def test_abstract_dijkstra_spf():
+    graph = Graph()
+
+    with pytest.raises(NotImplementedError):
+        AbstractDijkstraSPF.get_adjacent_nodes(graph, 0)
+
+    with pytest.raises(NotImplementedError):
+        AbstractDijkstraSPF.get_edge_weight(graph, 0, 1)

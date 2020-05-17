@@ -4,7 +4,7 @@
 import math
 
 
-class AbstractDijkstra(object):
+class AbstractDijkstraSPF(object):
 
     """ Dijkstra's shortest path algorithm, abstract class. """
 
@@ -53,7 +53,7 @@ class AbstractDijkstra(object):
         return path[::-1]
 
 
-class Dijkstra(AbstractDijkstra):
+class DijkstraSPF(AbstractDijkstraSPF):
 
     @staticmethod
     def get_adjacent_nodes(G, u):
