@@ -7,7 +7,28 @@ from io import StringIO
 
 class Graph(object):
 
-    """ Directed, acyclic graph with edge weights. """
+    """ Directed, acyclic graph with edge weights.
+
+    Graph can be constructed two different ways. Option 1 is to create an empty
+    graph and add edges using `add_edge(u, w, v)` method. For example, to
+    create graph G connecting node 0 to node 1 with edge weight 5, and node 1
+    to node 2 with edge weight 3, i.e.
+
+           5      3
+        0 ---> 1 ---> 2
+
+    >>> G = Graph()
+    >>> G.add_edge(0, 1, 5)
+    >>> G.add_edge(1, 2, 3)
+
+    Another option is to pass adjacency list and edge weights directly as
+    dictionaries. The same example with that way is constructed as:
+
+    >>> adjacency_list = {0: 1, 1: 2}
+    >>> edge_weights = {(0, 1): 5, (1, 2): 3}
+    >>> G = Graph(adjacency_list, edge_weights)
+
+    """
 
     def __init__(self, adjacency_list=dict(), edge_weights=dict()):
         self.__adjacency_list = adjacency_list.copy()
