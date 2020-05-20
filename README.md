@@ -1,6 +1,6 @@
 # Dijkstra
 
-[![Python CI][ci-badge]][ci-url]
+[![Python CI][ci-img]][ci-url]
 [![Coverate Status][coveralls-img]][coveralls-url]
 
 ![example1](docs/example1.gif)
@@ -32,7 +32,7 @@ the GitHub:
 pip install git+git://github.com/ahojukka5/dijkstra.git
 ```
 
-[ci-badge]: https://github.com/ahojukka5/gmshparser/workflows/Python%20CI/badge.svg
+[ci-img]: https://github.com/ahojukka5/dijkstra/workflows/Python%20CI/badge.svg
 [ci-url]: https://github.com/ahojukka5/dijkstra/actions
 [coveralls-img]: https://coveralls.io/repos/github/ahojukka5/dijkstra/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/github/ahojukka5/dijkstra?branch=master
