@@ -32,6 +32,9 @@ class Graph(object):
 
     def __init__(self, adjacency_list=dict(), edge_weights=dict()):
         self.__adjacency_list = adjacency_list.copy()
+        for adjacent_nodes in adjacency_list.values():
+            for node in adjacent_nodes:
+                self.__adjacency_list.setdefault(node, set())
         self.__edge_weights = edge_weights.copy()
 
     def add_edge(self, u, v, w):
@@ -40,6 +43,7 @@ class Graph(object):
         if u not in self.__adjacency_list:
             self.__adjacency_list[u] = set()
         self.__adjacency_list[u].add(v)
+        self.__adjacency_list.setdefault(v, set())
 
     def get_edge_weight(self, u, v):
         """ Get edge weight of edge between u and v. """
